@@ -239,6 +239,10 @@ with st.sidebar:
     install_cost = st.number_input(
         "Total installation cost (₹)", min_value=0, value=80000, step=1000
     )
+    subsidy_amount=st.number_input(
+        "Subsidy amount (₹)",value=78000)
+    
+    install_cost=install_cost - subsidy_amount
     maint_cost = st.number_input(
         "Estimated monthly maintenance (₹)", min_value=0, value=450, step=50
     )
@@ -297,7 +301,7 @@ top_cols = st.columns([1, 1, 1, 1])
 top_cols[0].metric("Avg monthly consumption", f"{unit_usage:,.0f} Unit")
 top_cols[1].metric("Est. monthly solar generation", f"{solar_gen:,.0f} Unit")
 top_cols[2].metric("Buyback rate", f"₹{buyback_rate:.2f} / unit")
-top_cols[3].metric("Install cost after subsidy", format_currency(install_cost))
+top_cols[3].metric("Installation cost after subsidy", format_currency(install_cost))
 
 calc_col = st.container()
 with calc_col:
