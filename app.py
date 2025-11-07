@@ -289,6 +289,9 @@ st.title("☀️ Solar ROI & Savings Estimator")
 st.write(
     "Estimate your monthly savings and investment payback for a proposed solar installation."
 )
+st.write(
+    "Developed by Karm Patel"
+)
 
 top_cols = st.columns([1, 1, 1, 1])
 top_cols[0].metric("Avg monthly consumption", f"{unit_usage:,.0f} Unit")
