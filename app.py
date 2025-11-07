@@ -409,9 +409,11 @@ with calc_col:
             )
         )
         fig.update_layout(
-            xaxis_title="Months",
-            yaxis_title="Cumulative Cost (₹)",
-            hovermode="x unified",
+            xaxis=dict(fixedrange=True),
+            yaxis=dict(fixedrange=True),
+            dragmode=False,  # disables pan/zoom
+            hovermode=False,
+            showlegend=True,
             legend=dict(
                 orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1
             ),
